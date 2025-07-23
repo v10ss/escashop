@@ -3,6 +3,20 @@ builder = "NIXPACKS"
 buildCommand = "npm run build"
 
 [deploy]
+startCommand = "npx serve -s build -l $PORT"
+numReplicas = 1
+sleepApplication = false
+restartPolicyType = "ON_FAILURE"
+
+[env]
+NODE_ENV = "production"
+PORT = "3000"
+
+[build]
+builder = "NIXPACKS"
+buildCommand = "npm run build"
+
+[deploy]
 startCommand = "npx serve -s build -l 3000"
 healthcheckPath = "/"
 healthcheckTimeout = 300

@@ -1,10 +1,4 @@
 services:
-  # Database
-  - type: pserv
-    name: escashop-database
-    env: docker
-    plan: free
-    dockerfilePath: ./database/Dockerfile
     
   # Backend API
   - type: web

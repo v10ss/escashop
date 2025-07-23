@@ -1,5 +1,18 @@
 [build]
 builder = "NIXPACKS"
+watchPatterns = ["**/*.ts", "**/*.js", "package.json"]
+
+[deploy]
+numReplicas = 1
+sleepApplication = false
+restartPolicyType = "ON_FAILURE"
+
+[env]
+NODE_ENV = "production"
+PORT = "5000"
+
+[build]
+builder = "NIXPACKS"
 buildCommand = "npm run build"
 
 [deploy]
